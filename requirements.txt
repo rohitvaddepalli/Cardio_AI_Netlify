@@ -1,0 +1,6 @@
+Flask
+numpy
+scipy
+gunicorn
+flask-cors
+aws-wsgi

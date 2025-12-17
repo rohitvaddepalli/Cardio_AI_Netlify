@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Sound Monitor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Heart Sound Monitor</h1>
+            <p class="subtitle">AI-Powered Cardiac Analysis</p>
+        </header>
+
+        <main>
+            <div class="card visualizer-card">
+                <canvas id="oscilloscope"></canvas>
+                <div class="status-indicator" id="recordingStatus">Ready to Record</div>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="btn btn-primary">
+                    <span class="icon">●</span> Start Recording
+                </button>
+                <button id="stopBtn" class="btn btn-danger" disabled>
+                    <span class="icon">■</span> Stop Analysis
+                </button>
+            </div>
+
+            <div class="results-area" id="resultsArea" style="display: none;">
+                <div class="result-card">
+                    <div class="result-label">BPM</div>
+                    <div class="result-value" id="bpmValue">--</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-label">Rhythm Status</div>
+                    <div class="result-value" id="statusValue">--</div>
+                    <div class="result-sub" id="variationValue"></div>
+                </div>
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing Signal...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
