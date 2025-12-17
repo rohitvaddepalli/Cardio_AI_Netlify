@@ -1,5 +1,5 @@
 [build]
-  command = "pip install -r requirements.txt"
+  command = "bash build_netlify.sh"
   publish = "static"
 
 [functions]
